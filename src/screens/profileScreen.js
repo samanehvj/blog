@@ -11,12 +11,12 @@ import {
   Button,
 } from 'react-native';
 
-const ProfileScreen = ({navigation, route}) => {
-  return (
-    <SafeAreaView>
-      <Text>This is {route.params.name}'s profile</Text>
-    </SafeAreaView>
-  );
-};
+// const ProfileScreen = ({navigation, route}) => {
+//   return (
+//     <SafeAreaView>
+//       <Text>This n is {route.params.name}'s profile</Text>
+//     </SafeAreaView>
+//   );
+// };
 
 export default ProfileScreen;
