@@ -1,19 +1,27 @@
 import React from 'react';
+import Button from '../components/Button';
 import {
-  SafeAreaView,
   Text,
+  SafeAreaView,
   TextInput,
   View,
   ScrollView,
   Image,
   FlatList,
   StyleSheet,
-  Button,
 } from 'react-native';
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'beige',
+  },
+  button: {
+    backgroundColor: 'beige',
+  }
+});
 
 const MainScreen = ({navigation}) => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <FlatList
         data={[
           {
@@ -25,7 +33,7 @@ const MainScreen = ({navigation}) => {
           {
             page: 'Celebrity',
             name: 'Dara Hayayi',
-            img: 'https://lh3.googleusercontent.com/proxy/pw_fUxV2Uqc85oqRZmH7mIxKALRiOBGFCSvzj18WPiAR0v9Lvcwb1CD3FD5-FoDTqCVbrnm4L23fx45eoqBm8OcRL11-l_MDqEmF6R4YwQ',
+            img: 'https://files.asemooni.com/storage/cdn/2019/06/dara-hayai16.jpg',
           },
           {
             page: 'Celebrity',
@@ -44,15 +52,17 @@ const MainScreen = ({navigation}) => {
           },
         ]}
         renderItem={({item}) => (
+          <View style={styles.button}>
           <Button
-            title={'Go to ' + item.name}
-            onPress={() =>
-              navigation.navigate('Celebrity', {
-                name: item.name,
-                img: item.img,
+              title={'Go to ' + item.name}
+              onPress={() =>
+                navigation.navigate('Celebrity', {
+                  name: item.name,
+                  img: item.img,
               })
             }
           />
+          </View>
         )}
       />
     </SafeAreaView>
